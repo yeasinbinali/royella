@@ -1,0 +1,164 @@
+[
+    {
+      "id": 1,
+      "room": {
+        "image": "https://i.ibb.co/j5cGYCQ/cozy-lively-home-interior-design-23-2151118955.jpg",
+        "description": "Cozy single room with city view",
+        "price_per_night": 100,
+        "size": "200 sq ft",
+        "availability": "Available",
+        "special_offers": "10% off for bookings made this week",
+        "reviews": [
+          {
+            "user": "Alice Johnson",
+            "rating": 4,
+            "comment": "Nice room, great location!"
+          },
+          {
+            "user": "Bob Smith",
+            "rating": 3.5,
+            "comment": "Decent room, but a bit noisy at night."
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "room": {
+        "image": "https://i.ibb.co/D4GKqN4/indoor-design-luxury-resort-23-2150497283.jpg",
+        "description": "Spacious deluxe suite with garden view",
+        "price_per_night": 300,
+        "size": "600 sq ft",
+        "availability": "Available",
+        "special_offers": "Free breakfast included",
+        "reviews": "No reviews available yet."
+      }
+    },
+    {
+      "id": 3,
+      "room": {
+        "image": "https://i.ibb.co/MhW9fXZ/space-childrens-bed-floor-landscape-estate-indoor-generate-ai-98402-23611.jpg",
+        "description": "Rustic cabin retreat in the mountains",
+        "price_per_night": 150,
+        "size": "400 sq ft",
+        "availability": "Available",
+        "special_offers": "",
+        "reviews": [
+          {
+            "user": "Emily White",
+            "rating": 5,
+            "comment": "Absolutely loved the peaceful atmosphere!"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "room": {
+        "image": "https://i.ibb.co/87dsnch/araff-view-city-from-high-rise-apartment-generative-ai-1028860-63148.jpg",
+        "description": "Modern loft with skyline view",
+        "price_per_night": 200,
+        "size": "500 sq ft",
+        "availability": "Booked",
+        "special_offers": "",
+        "reviews": "No reviews available yet."
+      }
+    },
+    {
+      "id": 5,
+      "room": {
+        "image": "https://i.ibb.co/5G5HyJ8/house-from-corn-island-nicaragua-138670-2305.jpg",
+        "description": "Beachfront bungalow with private terrace",
+        "price_per_night": 400,
+        "size": "700 sq ft",
+        "availability": "Available",
+        "special_offers": "Stay 5 nights, pay for 4",
+        "reviews": [
+          {
+            "user": "Michael Brown",
+            "rating": 4.5,
+            "comment": "Incredible location and amenities!"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "room": {
+        "image": "https://i.ibb.co/t8qpydX/cozy-lively-home-interior-design-23-2151118950.jpg",
+        "description": "Quaint cottage with garden access",
+        "price_per_night": 120,
+        "size": "300 sq ft",
+        "availability": "Available",
+        "special_offers": "15% off for last-minute bookings",
+        "reviews": "No reviews available yet."
+      }
+    },
+    {
+      "id": 7,
+      "room": {
+        "image": "https://i.ibb.co/yNcDC7z/interior-cozy-bedroom-modern-design-550617-31311.jpg",
+        "description": "Charming studio apartment in historic district",
+        "price_per_night": 80,
+        "size": "250 sq ft",
+        "availability": "Available",
+        "special_offers": "",
+        "reviews": [
+          {
+            "user": "Sophia Clark",
+            "rating": 4,
+            "comment": "Great value for the price!"
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "room": {
+        "image": "https://i.ibb.co/V2PCV1S/3d-rendering-beautiful-comtemporary-luxury-bedroom-suite-hotel-with-tv-105762-2071.jpg",
+        "description": "Luxurious penthouse with panoramic city views",
+        "price_per_night": 600,
+        "size": "1000 sq ft",
+        "availability": "Available",
+        "special_offers": "Complimentary champagne upon arrival",
+        "reviews": "No reviews available yet."
+      }
+    },
+    {
+      "id": 9,
+      "room": {
+        "image": "https://i.ibb.co/tDzbVcP/standard-twin-room-hotel-527134-1398.jpg",
+        "description": "Elegant townhouse with private courtyard",
+        "price_per_night": 280,
+        "size": "800 sq ft",
+        "availability": "Available",
+        "special_offers": "",
+        "reviews": [
+          {
+            "user": "David Wilson",
+            "rating": 4.5,
+            "comment": "Beautiful property and excellent service!"
+          }
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "room": {
+        "image": "https://i.ibb.co/smWwKnh/3d-rendering-beautiful-luxury-dark-wood-european-classic-bedroom-suite-hotel-105762-2164.jpg",
+        "description": "Safari tent with views of the savanna",
+        "price_per_night": 200,
+        "size": "300 sq ft",
+        "availability": "Available",
+        "special_offers": "Guided safari tour included",
+        "reviews": [
+          {
+            "user": "Emma Taylor",
+            "rating": 5,
+            "comment": "An unforgettable experience!"
+          }
+        ]
+      }
+    }
+  ]
+  
