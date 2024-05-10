@@ -1,12 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from "react-hook-form"
 import { Link } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
 import { Tooltip } from 'react-tooltip';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const Login = () => {
     const { register, handleSubmit } = useForm();
-    const onSubmit = (data) => console.log(data)
+    const { signInUser } = useContext(AuthContext);
+
+    const onSubmit = (data) => {
+        const email = data.email;
+        const password = data.password;
+
+        signInUser(email, password)
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(error => {
+                console.error(error.message)
+            })
+    }
+    
     return (
         <div className='mt-10 mb-20 w-1/3 p-10 mx-auto bg-[whitesmoke]'>
             <div className='p-10 bg-simple w-[120px] h-[120px] rounded-full mx-auto text-center'><img src="https://i.ibb.co/KwZnwMt/section-shape1.png" alt="" /></div>
