@@ -5,3 +5,11 @@
 body {
     font-family: "Cormorant Garamond", serif;
 }
+
+.simple-font {
+    font-family: "Poppins", sans-serif;
+}
+
+.title-font {
+    font-family: "Poetsen One", sans-serif;
+}
