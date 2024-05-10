@@ -12,6 +12,7 @@ import Register from './components/Authentication/Register/Register.jsx';
 import Login from './components/Authentication/Login/Login.jsx';
 import About from './components/About/About.jsx';
 import Contact from './components/Contact/Contact.jsx';
+import Rooms from './components/Rooms/Rooms.jsx';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>
+      },
+      {
+        path: '/rooms',
+        element: <Rooms></Rooms>
       },
       {
         path: "/register",
