@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../../../images/royella_logo.png';
 import { Link, NavLink } from 'react-router-dom';
 import './Navbar.css';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const Navbar = () => {
+    const { user } = useContext(AuthContext);
     const lists = [
         <li><NavLink className='text-complex text-lg' to='/'>Home</NavLink></li>,
         <li><NavLink className='text-complex text-lg' to='/rooms'>Rooms</NavLink></li>,
@@ -29,7 +31,9 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <button className='btn bg-main text-complex border-none'><Link to='/login'>Login</Link></button>
+                {
+                    user ? <button className='btn bg-main text-complex border-none'><Link to='/user'>User</Link></button> : <button className='btn bg-main text-complex border-none'><Link to='/login'>Login</Link></button>
+                }
             </div>
         </div>
     );
