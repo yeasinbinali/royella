@@ -3,7 +3,7 @@
       "id": 1,
       "room": {
         "image": "https://i.ibb.co/j5cGYCQ/cozy-lively-home-interior-design-23-2151118955.jpg",
-        "description": "Cozy single room with city view",
+        "description": "Cozy single room with smart city view",
         "price_per_night": 100,
         "size": "200 sq ft",
         "availability": "Available",
@@ -56,7 +56,7 @@
       "id": 4,
       "room": {
         "image": "https://i.ibb.co/87dsnch/araff-view-city-from-high-rise-apartment-generative-ai-1028860-63148.jpg",
-        "description": "Modern loft with skyline view",
+        "description": "Modern deluxe loft with skyline view",
         "price_per_night": 200,
         "size": "500 sq ft",
         "availability": "Booked",

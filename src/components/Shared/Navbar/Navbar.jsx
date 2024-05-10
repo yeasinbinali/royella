@@ -5,10 +5,10 @@ import './Navbar.css';
 
 const Navbar = () => {
     const lists = [
-        <li><NavLink className='text-complex text-xl' to='/'>Home</NavLink></li>,
-        <li><NavLink className='text-complex text-xl' to='/rooms'>Rooms</NavLink></li>,
-        <li><NavLink className='text-complex text-xl' to='/about'>About</NavLink></li>,
-        <li><NavLink className='text-complex text-xl' to='/contact'>Contact</NavLink></li>
+        <li><NavLink className='text-complex text-lg' to='/'>Home</NavLink></li>,
+        <li><NavLink className='text-complex text-lg' to='/rooms'>Rooms</NavLink></li>,
+        <li><NavLink className='text-complex text-lg' to='/about'>About</NavLink></li>,
+        <li><NavLink className='text-complex text-lg' to='/contact'>Contact</NavLink></li>
     ]
     return (
         <div className="navbar bg-simple py-6">
