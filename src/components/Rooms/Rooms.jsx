@@ -5,7 +5,7 @@ import IndividualRoom from './IndividualRoom/IndividualRoom';
 const Rooms = () => {
     const [rooms, setRooms] = useState([]);
     useEffect(() => {
-        axios.get('./rooms.json')
+        axios.get('http://localhost:5000/rooms')
             .then(res => {
                 setRooms(res.data)
             })

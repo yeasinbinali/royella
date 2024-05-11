@@ -1,6 +1,5 @@
 [
     {
-      "id": 1,
       "room": {
         "image": "https://i.ibb.co/j5cGYCQ/cozy-lively-home-interior-design-23-2151118955.jpg",
         "description": "Cozy single room with smart city view",
@@ -23,7 +22,6 @@
       }
     },
     {
-      "id": 2,
       "room": {
         "image": "https://i.ibb.co/D4GKqN4/indoor-design-luxury-resort-23-2150497283.jpg",
         "description": "Spacious deluxe suite with garden view",
@@ -35,7 +33,6 @@
       }
     },
     {
-      "id": 3,
       "room": {
         "image": "https://i.ibb.co/MhW9fXZ/space-childrens-bed-floor-landscape-estate-indoor-generate-ai-98402-23611.jpg",
         "description": "Rustic cabin retreat in the mountains",
@@ -53,7 +50,6 @@
       }
     },
     {
-      "id": 4,
       "room": {
         "image": "https://i.ibb.co/87dsnch/araff-view-city-from-high-rise-apartment-generative-ai-1028860-63148.jpg",
         "description": "Modern deluxe loft with skyline view",
@@ -65,7 +61,6 @@
       }
     },
     {
-      "id": 5,
       "room": {
         "image": "https://i.ibb.co/5G5HyJ8/house-from-corn-island-nicaragua-138670-2305.jpg",
         "description": "Beachfront bungalow with private terrace",
@@ -83,7 +78,6 @@
       }
     },
     {
-      "id": 6,
       "room": {
         "image": "https://i.ibb.co/t8qpydX/cozy-lively-home-interior-design-23-2151118950.jpg",
         "description": "Quaint cottage with garden access",
@@ -95,7 +89,6 @@
       }
     },
     {
-      "id": 7,
       "room": {
         "image": "https://i.ibb.co/yNcDC7z/interior-cozy-bedroom-modern-design-550617-31311.jpg",
         "description": "Charming studio apartment in historic district",
@@ -113,7 +106,6 @@
       }
     },
     {
-      "id": 8,
       "room": {
         "image": "https://i.ibb.co/V2PCV1S/3d-rendering-beautiful-comtemporary-luxury-bedroom-suite-hotel-with-tv-105762-2071.jpg",
         "description": "Luxurious penthouse with panoramic city views",
@@ -125,7 +117,6 @@
       }
     },
     {
-      "id": 9,
       "room": {
         "image": "https://i.ibb.co/tDzbVcP/standard-twin-room-hotel-527134-1398.jpg",
         "description": "Elegant townhouse with private courtyard",
@@ -143,7 +134,6 @@
       }
     },
     {
-      "id": 10,
       "room": {
         "image": "https://i.ibb.co/smWwKnh/3d-rendering-beautiful-luxury-dark-wood-european-classic-bedroom-suite-hotel-105762-2164.jpg",
         "description": "Safari tent with views of the savanna",
