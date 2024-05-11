@@ -3,6 +3,7 @@ import { SlSizeActual } from "react-icons/sl";
 import { FaDollarSign } from "react-icons/fa6";
 import { CgUnavailable } from "react-icons/cg";
 import { MdEventAvailable } from "react-icons/md";
+import { Link } from 'react-router-dom';
 
 
 const Room = ({ room }) => {
@@ -21,7 +22,7 @@ const Room = ({ room }) => {
                         availability === 'Available' ? <p className='bg-green-600 text-complex p-2 flex items-center'><MdEventAvailable className='text-xl mr-2' />{availability}</p> : <p className='bg-red-600 text-complex p-2 flex items-center'><CgUnavailable className='text-xl mr-2' />{availability}</p>
                     }
                 </div>
-                <button className='btn bg-main text-white border-none w-full btn-sm mt-6 hover:bg-simple'>Details</button>
+                <Link to={`/room/${room._id}`}><button className='btn bg-main text-white border-none w-full btn-sm mt-6 hover:bg-simple'>See Details</button></Link>
             </div>
         </div>
     );
