@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import Room from '../Home/Room/Room';
+import IndividualRoom from './IndividualRoom/IndividualRoom';
 
 const Rooms = () => {
     const [rooms, setRooms] = useState([]);
@@ -20,7 +20,7 @@ const Rooms = () => {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16'>
                 {
-                    rooms.map(room => <Room key={room.id} room={room}></Room>)
+                    rooms.map(room => <IndividualRoom key={room.id} room={room}></IndividualRoom>)
                 }
             </div>
         </div>

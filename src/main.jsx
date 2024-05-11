@@ -15,6 +15,7 @@ import Contact from './components/Contact/Contact.jsx';
 import Rooms from './components/Rooms/Rooms.jsx';
 import AuthProvider from './providers/AuthProvider.jsx';
 import UserProfile from './components/UserProfile/UserProfile.jsx';
+import MyBooking from './components/MyBooking/MyBooking.jsx';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: '/rooms',
         element: <Rooms></Rooms>
+      },
+      {
+        path: '/booking',
+        element: <MyBooking></MyBooking>
       },
       {
         path: "/register",
