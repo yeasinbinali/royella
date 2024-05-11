@@ -29,8 +29,9 @@ const RoomDetails = () => {
                     <p>Special Offer: <span className='font-bold'>{special_offers ? special_offers : 'Not Available'}</span></p>
                     <div className='mt-3 border-[1px] border-simple'>
                         <h1 className='text-xl p-3 font-bold'>Reviews: </h1>
+                        <div className='px-3 pb-2'>
                         {
-                            reviews.length === 0 ? 'No review yet' : reviews.map(review => <div className='px-3 pb-3'>
+                            reviews.length === 0 ? 'No review yet' : reviews.map((review, idx) => <div className='pb-3' key={idx}>
                                 <div className='border-[1px] border-simple p-3'>
                                     <h3 className='flex items-center'><FaUser className='mr-1' /> {review.user}</h3>
                                     <p className='flex items-center my-1'><FaComment className='mr-1' /> {review.comment}</p>
@@ -41,6 +42,7 @@ const RoomDetails = () => {
                                 </div>
                             </div>)
                         }
+                        </div>
                     </div>
                     {
                         availability === 'Available' ? <button className='btn bg-main text-white border-none w-full btn-sm mt-6 hover:bg-simple'>Book Now</button> : <button className='btn bg-main text-white border-none w-full btn-sm mt-6 cursor-not-allowed hover:bg-simple'>Already Booked</button>
