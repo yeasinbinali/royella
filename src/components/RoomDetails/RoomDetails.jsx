@@ -6,22 +6,42 @@ import { SlSizeActual } from 'react-icons/sl';
 import { useLoaderData } from 'react-router-dom';
 import { FaUser, FaComment, FaCalendarAlt, FaStar } from "react-icons/fa";
 import axios from 'axios';
+import { useState } from "react";
+import { DayPicker } from "react-day-picker";
+import { format } from "date-fns";
+import 'react-day-picker/dist/style.css';
 
 
 const RoomDetails = () => {
+    const [selected, setSelected] = useState();
+    const [newRoomData, setNewRoomData] = useState();
     const room = useLoaderData();
     const { image, description, availability, price_per_night, size, special_offers, reviews, _id } = room;
 
+    const isPastDays = (day) => {
+        const today = new Date();
+        return day < today;
+    }
+
     const handleBookingConfirm = (id) => {
-        console.log('clicked', id);
-        // axios.get(`http://localhost:5000/rooms/${id}`)
-        //     .then(res => {
-        //         const room = res.data;
-        //         axios.post('http://localhost:5000/bookingRoom', room)
-        //             .then(res => {
-        //                 console.log(res.data);
-        //             })
-        //     })
+        axios.get(`http://localhost:5000/rooms/${id}`)
+            .then(res => {
+                const roomData = res.data;
+                const date = format(selected, 'PP');
+                const newData = {...roomData, date};
+                setNewRoomData(newData)
+                axios.post('http://localhost:5000/bookingRoom', newRoomData)
+                    .then(res => {
+                        console.log(res.data);
+                    })
+            })
+    }
+    console.log(newRoomData)
+
+    let footer = <p className='mt-2'>Please pick a day</p>
+
+    if (selected) {
+        footer = <p className='mt-2'>You selected {format(selected, 'PP')}</p>
     }
 
     return (
@@ -57,18 +77,32 @@ const RoomDetails = () => {
                             }
                         </div>
                     </div>
+                    <div className='w-[80%] mx-auto'>
+                        <DayPicker
+                            mode='single'
+                            selected={selected}
+                            onSelect={setSelected}
+                            footer={footer}
+                            showOutsideDays
+                            disabled={isPastDays}
+                        />
+                    </div>
                     {
                         availability === 'Available' ? <>
                             <button className='btn bg-main text-white border-none btn-sm mt-6 hover:bg-simple w-full' onClick={() => document.getElementById('my_modal_5').showModal()}>Book Now</button>
                             <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
                                 <div className="modal-box">
-                                    <img className='rounded-lg' src={image} alt="" />
+                                    <form method="dialog">
+                                        <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                                    </form>
+                                    <img className='rounded-lg mt-5' src={image} alt="" />
                                     <h1 className='text-xl font-bold mt-2'>{description}</h1>
                                     <div className='flex justify-between items-center mt-2'>
                                         <p className='flex items-center'><SlSizeActual className='mr-2 text-xl' /> {size}</p>
                                         <p className='flex justify-center items-center text-xl font-bold'><FaDollarSign /> {price_per_night} <sub className='text-[10px]'> / Per Night</sub></p>
                                     </div>
-                                    <div className="modal-action text-center">
+                                    <p className='mt-2'>Date: <span className='font-bold'>{newRoomData?.date}</span></p>
+                                    <div className="text-center">
                                         <button onClick={() => handleBookingConfirm(_id)} className='btn bg-main text-white border-none btn-sm mt-4 hover:bg-simple'>Booking confirm</button>
                                     </div>
                                 </div>
