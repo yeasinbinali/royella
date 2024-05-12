@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 
 const Room = ({ room }) => {
-    const { image, description, size, price_per_night, availability } = room.room;
+    const { image, description, size, price_per_night, availability, _id } = room;
     return (
         <div className='border-[1px] border-simple relative'>
             <img className='w-[400px] h-[250px]' src={image} alt="image" />
@@ -22,7 +22,7 @@ const Room = ({ room }) => {
                         availability === 'Available' ? <p className='bg-green-600 text-complex p-2 flex items-center'><MdEventAvailable className='text-xl mr-2' />{availability}</p> : <p className='bg-red-600 text-complex p-2 flex items-center'><CgUnavailable className='text-xl mr-2' />{availability}</p>
                     }
                 </div>
-                <Link to={`/room/${room._id}`}><button className='btn bg-main text-white border-none w-full btn-sm mt-6 hover:bg-simple'>See Details</button></Link>
+                <Link to={`/room/${_id}`}><button className='btn bg-main text-white border-none w-full btn-sm mt-6 hover:bg-simple'>See Details</button></Link>
             </div>
         </div>
     );

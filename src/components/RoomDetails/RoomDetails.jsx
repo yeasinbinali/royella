@@ -9,8 +9,8 @@ import { FaUser, FaComment, FaCalendarAlt, FaStar } from "react-icons/fa";
 
 const RoomDetails = () => {
     const room = useLoaderData();
-    const { image, description, availability, price_per_night, size, special_offers, reviews } = room.room;
-    console.log(room);
+    const { image, description, availability, price_per_night, size, special_offers, reviews } = room;
+    
     return (
         <div className='mt-10 mb-20 w-[90%] mx-auto'>
             <div className='w-1/3 mx-auto relative border-2 border-[whitesmoke] shadow-lg'>

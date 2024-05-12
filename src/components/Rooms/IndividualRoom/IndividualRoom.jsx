@@ -3,9 +3,9 @@ import { FaDollarSign } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 
 const IndividualRoom = ({ room }) => {
-    const { image, price_per_night, reviews } = room.room;
+    const { image, price_per_night, reviews, _id } = room;
     return (
-        <Link to={`/room/${room._id}`}>
+        <Link to={`/room/${_id}`}>
             <div className='border-[1px] relative'>
                 <img className='w-[400px] h-[250px]' src={image} alt="image" />
                 <div className='bg-simple text-complex absolute w-1/2 p-2 top-0 right-0'>
