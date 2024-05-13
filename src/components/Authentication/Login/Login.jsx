@@ -8,7 +8,7 @@ import { AuthContext } from '../../../providers/AuthProvider';
 const Login = () => {
     const navigate = useNavigate();
     const { register, handleSubmit } = useForm();
-    const { signInUser } = useContext(AuthContext);
+    const { signInUser, googleSignIn } = useContext(AuthContext);
 
     const onSubmit = (data) => {
         const email = data.email;
@@ -17,10 +17,23 @@ const Login = () => {
         signInUser(email, password)
             .then(result => {
                 console.log(result.user)
+                alert('Login successfully');
                 navigate('/');
             })
             .catch(error => {
                 console.error(error.message)
+            })
+    }
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                console.log(result.user);
+                alert('Google sign in successfully');
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+                alert(errorMessage);
             })
     }
 
@@ -41,7 +54,7 @@ const Login = () => {
             </form>
             <div className="divider">OR</div>
             <div className='flex justify-center mt-5'>
-                <FcGoogle className='text-3xl my-anchor-element' />
+                <FcGoogle onClick={handleGoogleSignIn} className='text-3xl my-anchor-element' />
                 <Tooltip anchorSelect=".my-anchor-element" place="top">
                     Google Sign-in
                 </Tooltip>

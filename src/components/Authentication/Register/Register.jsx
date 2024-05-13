@@ -16,6 +16,7 @@ const Register = () => {
             .then(result => {
                 console.log(result.user)
                 navigate('/');
+                alert('Register successfully');
             })
             .catch(error => {
                 console.error(error.message)
