@@ -16,7 +16,6 @@ import { AuthContext } from '../../providers/AuthProvider';
 const RoomDetails = () => {
     const { user } = useContext(AuthContext);
     const [selected, setSelected] = useState(new Date());
-    const [newRoomData, setNewRoomData] = useState();
     const room = useLoaderData();
     const navigate = useNavigate();
     const { image, description, availability, price_per_night, size, special_offers, reviews, _id } = room;
@@ -35,8 +34,7 @@ const RoomDetails = () => {
             .then(res => {
                 const roomData = res.data;
                 const date = format(selected, 'PP');
-                const newData = { ...roomData, date, userName, email };
-                setNewRoomData(newData)
+                const newData = { roomData, date, userName, email };
                 axios.post('http://localhost:5000/bookingRoom', newData)
                     .then(res => {
                         if (res.data.acknowledged) {
@@ -46,7 +44,6 @@ const RoomDetails = () => {
                     })
             })
     }
-    console.log(newRoomData)
 
     let footer = <p className='mt-2'>Please pick a day</p>
 
