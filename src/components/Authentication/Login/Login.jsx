@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useForm } from "react-hook-form"
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
 import { Tooltip } from 'react-tooltip';
 import { AuthContext } from '../../../providers/AuthProvider';
@@ -8,6 +8,7 @@ import { AuthContext } from '../../../providers/AuthProvider';
 const Login = () => {
     const navigate = useNavigate();
     const { register, handleSubmit } = useForm();
+    const location = useLocation();
     const { signInUser, googleSignIn } = useContext(AuthContext);
 
     const onSubmit = (data) => {
@@ -18,7 +19,7 @@ const Login = () => {
             .then(result => {
                 console.log(result.user)
                 alert('Login successfully');
-                navigate('/');
+                navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
                 console.error(error.message)
@@ -30,6 +31,7 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
                 alert('Google sign in successfully');
+                navigate(location?.state ? location.state : '/');
             })
             .catch((error) => {
                 const errorMessage = error.message;
