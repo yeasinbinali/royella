@@ -3,7 +3,7 @@ import { CgUnavailable } from 'react-icons/cg';
 import { FaDollarSign } from 'react-icons/fa6';
 import { MdEventAvailable } from 'react-icons/md';
 import { SlSizeActual } from 'react-icons/sl';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { FaUser, FaComment, FaCalendarAlt, FaStar } from "react-icons/fa";
 import axios from 'axios';
 import { useState } from "react";
@@ -16,6 +16,7 @@ const RoomDetails = () => {
     const [selected, setSelected] = useState();
     const [newRoomData, setNewRoomData] = useState();
     const room = useLoaderData();
+    const navigate = useNavigate();
     const { image, description, availability, price_per_night, size, special_offers, reviews, _id } = room;
 
     const isPastDays = (day) => {
@@ -32,11 +33,13 @@ const RoomDetails = () => {
                 setNewRoomData(newData)
                 axios.post('http://localhost:5000/bookingRoom', newRoomData)
                     .then(res => {
-                        console.log(res.data);
+                        if(res.data.acknowledged) {
+                            alert(`You have booked a room on ${newData.date}`);
+                            navigate('/rooms');
+                        }
                     })
             })
     }
-    console.log(newRoomData)
 
     let footer = <p className='mt-2'>Please pick a day</p>
 
@@ -101,7 +104,6 @@ const RoomDetails = () => {
                                         <p className='flex items-center'><SlSizeActual className='mr-2 text-xl' /> {size}</p>
                                         <p className='flex justify-center items-center text-xl font-bold'><FaDollarSign /> {price_per_night} <sub className='text-[10px]'> / Per Night</sub></p>
                                     </div>
-                                    <p className='mt-2'>Date: <span className='font-bold'>{newRoomData?.date}</span></p>
                                     <div className="text-center">
                                         <button onClick={() => handleBookingConfirm(_id)} className='btn bg-main text-white border-none btn-sm mt-4 hover:bg-simple'>Booking confirm</button>
                                     </div>
