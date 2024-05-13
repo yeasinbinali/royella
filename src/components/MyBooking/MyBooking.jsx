@@ -40,6 +40,20 @@ const MyBooking = () => {
             })
     }
 
+    const handleDelete = (id) => {
+        fetch(`http://localhost:5000/bookingRoom/${id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                if(data.deletedCount > 0) {
+                    alert('Deleted successfully');
+                    const remaining = bookings.filter(booking => booking._id !== id)
+                    setBookings(remaining);
+                }
+            })
+    }
+
     const isPastDays = (day) => {
         const today = new Date();
         const yesterday = new Date(today);
@@ -79,7 +93,7 @@ const MyBooking = () => {
                                 {
                                     bookings.map(booking => <tbody>
                                         <tr key={booking._id} className="mt-2 border-[1px] border-[grey]">
-                                            <th><button className='bg-simple p-2 rounded-full hover:bg-red-600'><MdDelete className='text-xl text-complex' /></button></th>
+                                            <th><button onClick={() => handleDelete(booking._id)} className='bg-simple p-2 rounded-full hover:bg-red-600'><MdDelete className='text-xl text-complex' /></button></th>
                                             <td className='text-md font-bold'>{booking.roomData.description}</td>
                                             <td>${booking.roomData.price_per_night}</td>
                                             <td className='font-bold'>{booking.date}</td>

@@ -39,7 +39,7 @@ const RoomDetails = () => {
                     .then(res => {
                         if (res.data.acknowledged) {
                             alert(`You have booked a room on ${newData.date}`);
-                            navigate('/rooms');
+                            navigate('/booking');
                         }
                     })
             })
