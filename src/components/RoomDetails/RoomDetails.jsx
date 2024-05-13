@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { CgUnavailable } from 'react-icons/cg';
 import { FaDollarSign } from 'react-icons/fa6';
 import { MdEventAvailable } from 'react-icons/md';
@@ -10,10 +10,12 @@ import { useState } from "react";
 import { DayPicker } from "react-day-picker";
 import { format } from "date-fns";
 import 'react-day-picker/dist/style.css';
+import { AuthContext } from '../../providers/AuthProvider';
 
 
 const RoomDetails = () => {
-    const [selected, setSelected] = useState();
+    const { user } = useContext(AuthContext);
+    const [selected, setSelected] = useState(new Date());
     const [newRoomData, setNewRoomData] = useState();
     const room = useLoaderData();
     const navigate = useNavigate();
@@ -21,25 +23,30 @@ const RoomDetails = () => {
 
     const isPastDays = (day) => {
         const today = new Date();
-        return day < today;
+        const yesterday = new Date(today);
+        yesterday.setDate(yesterday.getDate() - 1);
+        return day < yesterday;
     }
 
     const handleBookingConfirm = (id) => {
+        const email = user.email;
+        const userName = user.displayName;
         axios.get(`http://localhost:5000/rooms/${id}`)
             .then(res => {
                 const roomData = res.data;
                 const date = format(selected, 'PP');
-                const newData = {...roomData, date};
+                const newData = { ...roomData, date, userName, email };
                 setNewRoomData(newData)
-                axios.post('http://localhost:5000/bookingRoom', newRoomData)
+                axios.post('http://localhost:5000/bookingRoom', newData)
                     .then(res => {
-                        if(res.data.acknowledged) {
+                        if (res.data.acknowledged) {
                             alert(`You have booked a room on ${newData.date}`);
                             navigate('/rooms');
                         }
                     })
             })
     }
+    console.log(newRoomData)
 
     let footer = <p className='mt-2'>Please pick a day</p>
 
