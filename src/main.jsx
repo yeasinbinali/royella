@@ -18,6 +18,7 @@ import UserProfile from './components/UserProfile/UserProfile.jsx';
 import MyBooking from './components/MyBooking/MyBooking.jsx';
 import RoomDetails from './components/RoomDetails/RoomDetails.jsx';
 import PrivateRoute from './route/PrivateRoute.jsx';
+import Reviews from './components/Reviews/Reviews.jsx';
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,11 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact></Contact>
+      },
+      {
+        path: "/reviews/:id",
+        element: <Reviews></Reviews>,
+        loader: ({ params }) => fetch(`http://localhost:5000/bookingRoom/${params.id}`)
       },
       {
         path: '/user',
