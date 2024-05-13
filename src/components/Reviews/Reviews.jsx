@@ -1,5 +1,6 @@
+import axios from 'axios';
 import React, { useContext } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form"
 import { AuthContext } from '../../providers/AuthProvider';
 
@@ -7,10 +8,16 @@ const Reviews = () => {
     const { user } = useContext(AuthContext);
     const reviewRoom = useLoaderData();
     const { register, handleSubmit } = useForm();
-    console.log(reviewRoom);
+    const navigate = useNavigate();
 
     const onSubmit = (data) => {
-        console.log(data);
+        axios.post('http://localhost:5000/reviews', data)
+            .then(res => {
+                if (res.data.acknowledged) {
+                    alert('Review added');
+                    navigate('/');
+                }
+            })
     }
 
     return (
@@ -34,7 +41,7 @@ const Reviews = () => {
                     </div>
                     <div className='w-[50%] mx-auto mb-5'>
                         <label>Timestamp</label><br />
-                        <input defaultValue={new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(Date.now())} type='text' className='border-[1px] w-full p-1' {...register("timestamp")} readOnly />
+                        <input defaultValue={new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(Date.now())} type='text' className='border-[1px] w-full p-1' {...register("timestamp")} readOnly />
                     </div>
                     <div className='w-[50%] mx-auto mb-5'>
                         <label>Comment</label><br />
