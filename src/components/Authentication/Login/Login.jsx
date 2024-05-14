@@ -5,6 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import { Tooltip } from 'react-tooltip';
 import { AuthContext } from '../../../providers/AuthProvider';
 import Swal from 'sweetalert2'
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -55,6 +56,9 @@ const Login = () => {
 
     return (
         <div className='mt-10 mb-20 w-1/3 p-10 mx-auto bg-[whitesmoke]'>
+            <Helmet>
+                <title>Royella | Login</title>
+            </Helmet>
             <div className='p-10 bg-simple w-[120px] h-[120px] rounded-full mx-auto text-center'><img src="https://i.ibb.co/KwZnwMt/section-shape1.png" alt="" /></div>
             <h1 className='text-5xl title-font text-center my-8'>Login</h1>
             <form className='mb-5' onSubmit={handleSubmit(onSubmit)}>

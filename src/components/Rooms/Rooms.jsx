@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import IndividualRoom from './IndividualRoom/IndividualRoom';
 import noFound from '../../../images/no_data_found.png';
+import { Helmet } from 'react-helmet-async';
 
 const Rooms = () => {
     const [rooms, setRooms] = useState([]);
@@ -26,6 +27,9 @@ const Rooms = () => {
 
     return (
         <div className='mb-20 w-[90%] mx-auto mt-10'>
+            <Helmet>
+                <title>Royella | Rooms</title>
+            </Helmet>
             <div className='mb-5 w-[50%] mx-auto text-center'>
                 <h2 className='text-5xl mb-5 title-font'>All Rooms</h2>
                 <p>Welcome to Royella, where comfort meets convenience. Discover a curated selection of hotel rooms designed to provide a home away from home experience.</p>

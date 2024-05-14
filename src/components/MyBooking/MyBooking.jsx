@@ -7,6 +7,7 @@ import { format } from "date-fns";
 import 'react-day-picker/dist/style.css';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
+import { Helmet } from 'react-helmet-async';
 
 const MyBooking = () => {
     const { user } = useContext(AuthContext);
@@ -26,7 +27,7 @@ const MyBooking = () => {
             date: format(selected, 'PP')
         }
         fetch(`http://localhost:5000/bookingRoom/${id}`, {
-            method: 'PUT',
+            method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
             },
@@ -89,6 +90,9 @@ const MyBooking = () => {
 
     return (
         <div className='w-[90%] mx-auto mt-10 mb-20'>
+            <Helmet>
+                <title>Royella | My Booking</title>
+            </Helmet>
             {
                 bookings.length === 0 ? <div className='my-10 text-center'>
                     <p className='text-xl font-bold'>You have no booking room</p>

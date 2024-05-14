@@ -12,6 +12,7 @@ import { format } from "date-fns";
 import 'react-day-picker/dist/style.css';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 
 const RoomDetails = () => {
@@ -83,6 +84,9 @@ const RoomDetails = () => {
 
     return (
         <div className='mt-10 mb-20 w-[90%] mx-auto'>
+            <Helmet>
+                <title>Royella | Room Details</title>
+            </Helmet>
             <div className='w-1/3 mx-auto relative border-2 border-[whitesmoke] shadow-lg'>
                 <img src={image} alt="room" />
                 <div className='bg-simple text-complex absolute w-1/2 p-2 top-0 right-0'>

@@ -4,6 +4,7 @@ import { useLoaderData, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form"
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2'
+import { Helmet } from 'react-helmet-async';
 
 const Reviews = () => {
     const { user } = useContext(AuthContext);
@@ -30,6 +31,9 @@ const Reviews = () => {
 
     return (
         <div className='w-[90%] mx-auto mt-10 mb-20'>
+            <Helmet>
+                <title>Royella | Reviews</title>
+            </Helmet>
             <div className='bg-[whitesmoke] w-[50%] mx-auto p-5'>
                 <h1 className='text-xl my-5 text-center'>Review for <span className='font-bold'>{reviewRoom.description}</span></h1>
                 <form className='mb-5' onSubmit={handleSubmit(onSubmit)}>

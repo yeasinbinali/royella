@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form"
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import Swal from 'sweetalert2'
+import { Helmet } from 'react-helmet-async';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -41,6 +42,9 @@ const Register = () => {
 
     return (
         <div className='mt-10 mb-20 w-1/3 p-10 mx-auto bg-[whitesmoke]'>
+            <Helmet>
+                <title>Royella | Register</title>
+            </Helmet>
             <div className='p-10 bg-simple w-[120px] h-[120px] rounded-full mx-auto text-center'><img src="https://i.ibb.co/KwZnwMt/section-shape1.png" alt="" /></div>
             <h1 className='text-5xl title-font text-center my-8'>Register</h1>
             <form className='mb-5' onSubmit={handleSubmit(onSubmit)}>
