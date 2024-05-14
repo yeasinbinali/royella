@@ -4,6 +4,7 @@ import Direction from '../Direction/Direction';
 import FeaturedRooms from '../FeaturedRooms/FeaturedRooms';
 import NewsLetter from '../NewsLetter/NewsLetter';
 import UserReviews from '../UserReviews/UserReviews';
+import SpecialOfferModal from '../SpecialOfferModal/SpecialOfferModal';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             <FeaturedRooms></FeaturedRooms>
             <NewsLetter></NewsLetter>
             <UserReviews></UserReviews>
+            <SpecialOfferModal></SpecialOfferModal>
         </div>
     );
 };
