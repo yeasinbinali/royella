@@ -46,13 +46,29 @@ const RoomDetails = () => {
                 const roomData = res.data;
                 const date = format(selected, 'PP');
                 const newData = { roomData, date, userName, email };
+
+                const bookedRoom = {
+                    availability: 'Booked'
+                }
+
                 axios.post('http://localhost:5000/bookingRoom', newData)
                     .then(res => {
+
+                        fetch(`http://localhost:5000/rooms/${id}`, {
+                            method: 'PATCH',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(bookedRoom)
+                        })
+                            .then(res => res.json())
+                            .then(() => {})
+
                         if (res.data.acknowledged) {
                             Swal.fire({
                                 title: `You have booked a room on ${newData.date}`,
                                 icon: "success"
-                              })
+                            })
                             navigate('/booking');
                         }
                     })
