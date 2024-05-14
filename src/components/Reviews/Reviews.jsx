@@ -39,7 +39,7 @@ const Reviews = () => {
                     </div>
                     <div className='w-[50%] mx-auto mb-6'>
                         <label>Rating</label><br />
-                        <select className='border-[1px] w-full p-1' {...register("rating")}>
+                        <select className='border-[1px] w-full p-1' required {...register("rating")}>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -53,7 +53,7 @@ const Reviews = () => {
                     </div>
                     <div className='w-[50%] mx-auto mb-5'>
                         <label>Comment</label><br />
-                        <textarea placeholder='Your valuable comment' type='text' className='border-[1px] w-full p-1' {...register("comment")} />
+                        <textarea placeholder='Your valuable comment' type='text' className='border-[1px] w-full p-1' {...register("comment")} required />
                     </div>
                     <div className='text-center'>
                         <input className='btn bg-main text-complex w-[50%] btn-sm hover:bg-simple' type="submit" />
