@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
 import { Tooltip } from 'react-tooltip';
 import { AuthContext } from '../../../providers/AuthProvider';
+import Swal from 'sweetalert2'
 
 const Login = () => {
     const navigate = useNavigate();
@@ -17,25 +18,38 @@ const Login = () => {
 
         signInUser(email, password)
             .then(result => {
-                console.log(result.user)
-                alert('Login successfully');
+                Swal.fire({
+                    title: "Login user successfully",
+                    icon: "success"
+                  })
                 navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
-                console.error(error.message)
+                const errorMessage = error.message;
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: {errorMessage}
+                  });
             })
     }
 
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then(result => {
-                console.log(result.user);
-                alert('Google sign in successfully');
+                Swal.fire({
+                    title: "Google sign-in successfully",
+                    icon: "success"
+                  })
                 navigate(location?.state ? location.state : '/');
             })
             .catch((error) => {
                 const errorMessage = error.message;
-                alert(errorMessage);
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: {errorMessage}
+                  });
             })
     }
 
@@ -46,11 +60,11 @@ const Login = () => {
             <form className='mb-5' onSubmit={handleSubmit(onSubmit)}>
                 <div className='w-full mx-auto mb-5'>
                     <label>Email</label><br />
-                    <input placeholder='Your Email' type='email' className='border-[1px] w-full p-1' {...register("email")} />
+                    <input placeholder='Your Email' required type='email' className='border-[1px] w-full p-1' {...register("email")} />
                 </div>
                 <div className='w-full mx-auto mb-6'>
                     <label>Password</label><br />
-                    <input placeholder='Your Password' type='password' className='border-[1px] w-full p-1' {...register("password")} />
+                    <input placeholder='Your Password' required type='password' className='border-[1px] w-full p-1' {...register("password")} />
                 </div>
                 <input className='btn bg-main text-complex w-full btn-sm hover:bg-simple' type="submit" />
             </form>

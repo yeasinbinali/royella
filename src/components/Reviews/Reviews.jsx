@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form"
 import { AuthContext } from '../../providers/AuthProvider';
+import Swal from 'sweetalert2'
 
 const Reviews = () => {
     const { user } = useContext(AuthContext);
@@ -18,7 +19,10 @@ const Reviews = () => {
         axios.post('http://localhost:5000/reviews', room)
             .then(res => {
                 if (res.data.acknowledged) {
-                    alert('Review added');
+                    Swal.fire({
+                        title: "Added your review successfully",
+                        icon: "success"
+                      })
                     navigate('/');
                 }
             })

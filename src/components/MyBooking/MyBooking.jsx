@@ -6,6 +6,7 @@ import { DayPicker } from 'react-day-picker';
 import { format } from "date-fns";
 import 'react-day-picker/dist/style.css';
 import { Link, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2'
 
 const MyBooking = () => {
     const { user } = useContext(AuthContext);
@@ -33,8 +34,11 @@ const MyBooking = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if(data.modifiedCount > 0) {
-                    alert('Update date successfully')
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        title: "Update date successfully",
+                        icon: "success"
+                    })
                     navigate('/');
                 }
             })
@@ -46,11 +50,27 @@ const MyBooking = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if(data.deletedCount > 0) {
-                    alert('Deleted successfully');
-                    const remaining = bookings.filter(booking => booking._id !== id)
-                    setBookings(remaining);
-                }
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Your file has been deleted.",
+                            icon: "success"
+                        });
+                        if (data.deletedCount > 0) {
+                            const remaining = bookings.filter(booking => booking._id !== id)
+                            setBookings(remaining);
+                        }
+                    }
+                });
             })
     }
 

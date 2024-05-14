@@ -11,6 +11,7 @@ import { DayPicker } from "react-day-picker";
 import { format } from "date-fns";
 import 'react-day-picker/dist/style.css';
 import { AuthContext } from '../../providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 
 const RoomDetails = () => {
@@ -48,7 +49,10 @@ const RoomDetails = () => {
                 axios.post('http://localhost:5000/bookingRoom', newData)
                     .then(res => {
                         if (res.data.acknowledged) {
-                            alert(`You have booked a room on ${newData.date}`);
+                            Swal.fire({
+                                title: `You have booked a room on ${newData.date}`,
+                                icon: "success"
+                              })
                             navigate('/booking');
                         }
                     })

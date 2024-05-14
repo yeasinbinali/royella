@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2'
 
 const UserProfile = () => {
     const navigate = useNavigate();
@@ -9,11 +10,19 @@ const UserProfile = () => {
     const handleLogoutUser = () => {
         logoutUser()
             .then(() => {
-                alert('logout');
+                Swal.fire({
+                    title: "Logout user successfully",
+                    icon: "success"
+                  })
                 navigate('/');
             })
             .catch(error => {
-                console.log(error.message)
+                const errorMessage = error.message;
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: {errorMessage}
+                  });
             })
     }
 

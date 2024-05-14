@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useForm } from "react-hook-form"
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
+import Swal from 'sweetalert2'
 
 const Register = () => {
     const navigate = useNavigate();
@@ -23,10 +24,18 @@ const Register = () => {
                         console.log(error.message);
                     })
                 navigate('/');
-                alert('Register successfully');
+                Swal.fire({
+                    title: "Create new user successfully",
+                    icon: "success"
+                  })
             })
             .catch(error => {
-                console.error(error.message)
+                const errorMessage = error.message;
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: {errorMessage}
+                  });
             })
     }
 
