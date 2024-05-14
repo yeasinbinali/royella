@@ -5,21 +5,7 @@
     "price_per_night": 100,
     "size": "200 sq ft",
     "availability": "Available",
-    "special_offers": "10% off for bookings made this week",
-    "reviews": [
-      {
-        "user": "Alice Johnson",
-        "rating": 4,
-        "comment": "Nice room, great location!",
-        "timestamp": "2024-05-01T10:30:00Z"
-      },
-      {
-        "user": "Bob Smith",
-        "rating": 3.5,
-        "comment": "Decent room, but a bit noisy at night.",
-        "timestamp": "2024-05-02T09:15:00Z"
-      }
-    ]
+    "special_offers": "10% off for bookings made this week"
   },
   {
     "image": "https://i.ibb.co/D4GKqN4/indoor-design-luxury-resort-23-2150497283.jpg",
@@ -27,15 +13,7 @@
     "price_per_night": 300,
     "size": "600 sq ft",
     "availability": "Available",
-    "special_offers": "Free breakfast included",
-    "reviews": [
-      {
-        "user": "John Doe",
-        "rating": 5,
-        "comment": "Absolutely amazing!",
-        "timestamp": "2024-05-03T14:45:00Z"
-      }
-    ]
+    "special_offers": "Free breakfast included"
   },
   {
     "image": "https://i.ibb.co/MhW9fXZ/space-childrens-bed-floor-landscape-estate-indoor-generate-ai-98402-23611.jpg",
@@ -43,15 +21,7 @@
     "price_per_night": 150,
     "size": "400 sq ft",
     "availability": "Available",
-    "special_offers": "",
-    "reviews": [
-      {
-        "user": "Emily White",
-        "rating": 5,
-        "comment": "Absolutely loved the peaceful atmosphere!",
-        "timestamp": "2024-05-04T11:20:00Z"
-      }
-    ]
+    "special_offers": ""
   },
   {
     "image": "https://i.ibb.co/87dsnch/araff-view-city-from-high-rise-apartment-generative-ai-1028860-63148.jpg",
@@ -59,15 +29,7 @@
     "price_per_night": 200,
     "size": "500 sq ft",
     "availability": "Booked",
-    "special_offers": "",
-    "reviews": [
-      {
-        "user": "David Brown",
-        "rating": 4.5,
-        "comment": "Stunning view!",
-        "timestamp": "2024-05-05T08:00:00Z"
-      }
-    ]
+    "special_offers": ""
   },
   {
     "image": "https://i.ibb.co/5G5HyJ8/house-from-corn-island-nicaragua-138670-2305.jpg",
@@ -75,15 +37,7 @@
     "price_per_night": 400,
     "size": "700 sq ft",
     "availability": "Available",
-    "special_offers": "Stay 5 nights, pay for 4",
-    "reviews": [
-      {
-        "user": "Sophia Clark",
-        "rating": 4.5,
-        "comment": "Lovely place by the beach!",
-        "timestamp": "2024-05-06T16:30:00Z"
-      }
-    ]
+    "special_offers": "Stay 5 nights, pay for 4"
   },
   {
     "image": "https://i.ibb.co/t8qpydX/cozy-lively-home-interior-design-23-2151118950.jpg",
@@ -91,15 +45,7 @@
     "price_per_night": 120,
     "size": "300 sq ft",
     "availability": "Available",
-    "special_offers": "15% off for last-minute bookings",
-    "reviews": [
-      {
-        "user": "Emma Wilson",
-        "rating": 3.5,
-        "comment": "Nice stay overall.",
-        "timestamp": "2024-05-07T12:00:00Z"
-      }
-    ]
+    "special_offers": "15% off for last-minute bookings"
   },
   {
     "image": "https://i.ibb.co/yNcDC7z/interior-cozy-bedroom-modern-design-550617-31311.jpg",
@@ -107,8 +53,7 @@
     "price_per_night": 80,
     "size": "250 sq ft",
     "availability": "Available",
-    "special_offers": "",
-    "reviews": []
+    "special_offers": ""
   },
   {
     "image": "https://i.ibb.co/V2PCV1S/3d-rendering-beautiful-comtemporary-luxury-bedroom-suite-hotel-with-tv-105762-2071.jpg",
@@ -116,15 +61,7 @@
     "price_per_night": 600,
     "size": "1000 sq ft",
     "availability": "Available",
-    "special_offers": "Complimentary champagne upon arrival",
-    "reviews": [
-      {
-        "user": "Michael Johnson",
-        "rating": 5,
-        "comment": "Amazing experience!",
-        "timestamp": "2024-05-08T18:20:00Z"
-      }
-    ]
+    "special_offers": "Complimentary champagne upon arrival"
   },
   {
     "image": "https://i.ibb.co/tDzbVcP/standard-twin-room-hotel-527134-1398.jpg",
@@ -132,8 +69,7 @@
     "price_per_night": 280,
     "size": "800 sq ft",
     "availability": "Available",
-    "special_offers": "",
-    "reviews": []
+    "special_offers": ""
   },
   {
     "image": "https://i.ibb.co/smWwKnh/3d-rendering-beautiful-luxury-dark-wood-european-classic-bedroom-suite-hotel-105762-2164.jpg",
@@ -141,14 +77,6 @@
     "price_per_night": 200,
     "size": "300 sq ft",
     "availability": "Available",
-    "special_offers": "Guided safari tour included",
-    "reviews": [
-      {
-        "user": "Andrew Thompson",
-        "rating": 4,
-        "comment": "Exciting adventure!",
-        "timestamp": "2024-05-09T10:00:00Z"
-      }
-    ]
+    "special_offers": "Guided safari tour included"
   }
 ]

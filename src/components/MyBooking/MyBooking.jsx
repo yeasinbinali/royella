@@ -120,7 +120,7 @@ const MyBooking = () => {
                                                     </div>
                                                 </dialog>
                                             </td>
-                                            <td><Link to={`/reviews/${booking._id}`}><button className='btn btn-sm bg-main text-complex border-none hover:bg-simple'>Review</button></Link></td>
+                                            <td><Link to={`/reviews/${booking.roomData._id}`}><button className='btn btn-sm bg-main text-complex border-none hover:bg-simple'>Review</button></Link></td>
                                             <hr />
                                         </tr>
                                     </tbody>

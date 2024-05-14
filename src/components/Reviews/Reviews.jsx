@@ -9,9 +9,13 @@ const Reviews = () => {
     const reviewRoom = useLoaderData();
     const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
+    console.log(reviewRoom);
+
+    const id = reviewRoom._id;
 
     const onSubmit = (data) => {
-        axios.post('http://localhost:5000/reviews', data)
+        const room = { ...data, id }
+        axios.post('http://localhost:5000/reviews', room)
             .then(res => {
                 if (res.data.acknowledged) {
                     alert('Review added');
@@ -23,7 +27,7 @@ const Reviews = () => {
     return (
         <div className='w-[90%] mx-auto mt-10 mb-20'>
             <div className='bg-[whitesmoke] w-[50%] mx-auto p-5'>
-                <h1 className='text-xl my-5 text-center'>Review for <span className='font-bold'>{reviewRoom.roomData.description}</span></h1>
+                <h1 className='text-xl my-5 text-center'>Review for <span className='font-bold'>{reviewRoom.description}</span></h1>
                 <form className='mb-5' onSubmit={handleSubmit(onSubmit)}>
                     <div className='w-[50%] mx-auto mb-5'>
                         <label>User</label><br />

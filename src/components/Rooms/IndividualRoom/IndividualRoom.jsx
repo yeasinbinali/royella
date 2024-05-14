@@ -1,9 +1,21 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import { FaDollarSign } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 
 const IndividualRoom = ({ room }) => {
-    const { image, price_per_night, reviews, _id } = room;
+    const [reviews, setReviews] = useState([]);
+    const { image, price_per_night, _id } = room;
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/reviews')
+            .then(res => {
+                const allReviews = res.data;
+                const specificRoomById = allReviews.filter(allReview => allReview.id === _id);
+                setReviews(specificRoomById);
+            })
+    }, [])
+
     return (
         <Link to={`/room/${_id}`}>
             <div className='border-[1px] relative'>

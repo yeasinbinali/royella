@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { CgUnavailable } from 'react-icons/cg';
 import { FaDollarSign } from 'react-icons/fa6';
 import { MdEventAvailable } from 'react-icons/md';
@@ -15,10 +15,20 @@ import { AuthContext } from '../../providers/AuthProvider';
 
 const RoomDetails = () => {
     const { user } = useContext(AuthContext);
+    const [reviews, setReviews] = useState([]);
     const [selected, setSelected] = useState(new Date());
     const room = useLoaderData();
     const navigate = useNavigate();
-    const { image, description, availability, price_per_night, size, special_offers, reviews, _id } = room;
+    const { image, description, availability, price_per_night, size, special_offers, _id } = room;
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/reviews')
+            .then(res => {
+                const allReviews = res.data;
+                const specificRoomById = allReviews.filter(allReview => allReview.id === _id);
+                setReviews(specificRoomById);
+            })
+    }, [])
 
     const isPastDays = (day) => {
         const today = new Date();
