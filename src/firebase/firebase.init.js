@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCCLwNab-s8fIr_Gblg5-GXWHewmdEkRzk",
-  authDomain: "royella-luxury-hotel.firebaseapp.com",
-  projectId: "royella-luxury-hotel",
-  storageBucket: "royella-luxury-hotel.appspot.com",
-  messagingSenderId: "356368651678",
-  appId: "1:356368651678:web:c88130b77ca0dba8a5b28f"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase
