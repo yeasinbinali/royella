@@ -19,11 +19,13 @@ import MyBooking from './components/MyBooking/MyBooking.jsx';
 import RoomDetails from './components/RoomDetails/RoomDetails.jsx';
 import PrivateRoute from './route/PrivateRoute.jsx';
 import Reviews from './components/Reviews/Reviews.jsx';
+import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
