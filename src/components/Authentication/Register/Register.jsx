@@ -18,25 +18,29 @@ const Register = () => {
 
         createUser(email, password)
             .then(result => {
-                console.log(result.user)
                 updateUser(name, photo)
-                    .then(() => {})
+                    .then(() => { })
                     .catch((error) => {
-                        console.log(error.message);
+                        const errorMessage = error.message;
+                        Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            text: { errorMessage }
+                        });
                     })
                 navigate('/');
                 Swal.fire({
                     title: "Create new user successfully",
                     icon: "success"
-                  })
+                })
             })
             .catch(error => {
                 const errorMessage = error.message;
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
-                    text: {errorMessage}
-                  });
+                    text: { errorMessage }
+                });
             })
     }
 

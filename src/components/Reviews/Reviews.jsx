@@ -11,8 +11,6 @@ const Reviews = () => {
     const reviewRoom = useLoaderData();
     const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
-    console.log(reviewRoom);
-
     const id = reviewRoom._id;
 
     const onSubmit = (data) => {

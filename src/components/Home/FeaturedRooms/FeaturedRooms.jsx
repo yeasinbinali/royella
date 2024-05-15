@@ -11,7 +11,6 @@ const FeaturedRooms = () => {
                 setRooms(res.data)
             })
     }, [])
-    console.log(rooms);
 
     return (
         <div className='mb-20 w-[90%] mx-auto'>
