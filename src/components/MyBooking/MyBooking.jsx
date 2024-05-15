@@ -16,7 +16,9 @@ const MyBooking = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/bookingRoom?email=${user.email}`)
+        axios.get(`http://localhost:5000/bookingRoom?email=${user.email}`, {
+            withCredentials: true
+        })
             .then(res => {
                 setBookings(res.data)
             })
