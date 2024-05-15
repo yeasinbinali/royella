@@ -2,7 +2,7 @@
 
 ## Royella
 
-[live link](Live site link)
+[live link](https://royella-luxury-hotel.web.app)
 
 <p>Royella is a hotel booking platform. Here users can book their preferred room on a specific date and there they can provide their valuable comments about the room.</p>
 
