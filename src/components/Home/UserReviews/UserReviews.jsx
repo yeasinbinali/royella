@@ -24,7 +24,7 @@ const UserReviews = () => {
 
     return (
         <div className='mb-20 w-[90%] mx-auto'>
-            <h1 className='text-5xl mb-16 title-font'>User Reviews</h1>
+            <h1 className='text-3xl md:text-4xl lg:text-5xl mb-10 md:mb-16 title-font'>User Reviews</h1>
             <Swiper
                 effect={'coverflow'}
                 grabCursor={true}

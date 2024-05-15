@@ -30,7 +30,7 @@ const Rooms = () => {
             <Helmet>
                 <title>Royella | Rooms</title>
             </Helmet>
-            <div className='mb-5 w-[50%] mx-auto text-center'>
+            <div className='mb-5 w-[90%] md:w-[75%] lg:w-[50%] mx-auto text-center'>
                 <h2 className='text-5xl mb-5 title-font'>All Rooms</h2>
                 <p>Welcome to Royella, where comfort meets convenience. Discover a curated selection of hotel rooms designed to provide a home away from home experience.</p>
             </div>
@@ -40,7 +40,7 @@ const Rooms = () => {
                     placeholder='Min price'
                     value={minPrice}
                     onChange={(e) => setMinPrice(e.target.value)}
-                    className='border-[1px] border-simple p-1 mr-3'
+                    className='border-[1px] border-simple p-1 mb-3 md:mb-0 md:mr-3'
                 />
                 <input
                     type="number"

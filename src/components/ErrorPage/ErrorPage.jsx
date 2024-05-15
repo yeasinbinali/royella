@@ -9,7 +9,7 @@ const ErrorPage = () => {
             <Helmet>
                 <title>Royella | Error</title>
             </Helmet>
-            <img className='w-1/2 mx-auto' src={error} alt="" />
+            <img className='w-[90%] md:w-1/3 lg:w-1/2 mx-auto' src={error} alt="" />
             <Link to='/'><button className='btn btn-sm bg-main text-complex mt-5'>Go back</button></Link>
         </div>
     )

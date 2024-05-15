@@ -87,13 +87,13 @@ const RoomDetails = () => {
             <Helmet>
                 <title>Royella | Room Details</title>
             </Helmet>
-            <div className='w-1/3 mx-auto relative border-2 border-[whitesmoke] shadow-lg'>
+            <div className='w-[90%] md:w-[75%] lg:w-1/3 mx-auto relative border-2 border-[whitesmoke] shadow-lg'>
                 <img src={image} alt="room" />
                 <div className='bg-simple text-complex absolute w-1/2 p-2 top-0 right-0'>
                     <p className='flex justify-center items-center text-3xl font-bold'><FaDollarSign /> {price_per_night} <sub className='text-[10px]'> / Per Night</sub></p>
                 </div>
                 <div className='p-3'>
-                    <h1 className='text-2xl font-bold'>{description}</h1>
+                    <h1 className='text-xl md:text-2xl font-bold'>{description}</h1>
                     <div className='flex justify-between items-center my-3'>
                         <p className='flex items-center'><SlSizeActual className='mr-2 text-xl' /> {size}</p>
                         {
@@ -118,7 +118,7 @@ const RoomDetails = () => {
                             }
                         </div>
                     </div>
-                    <div className='w-[80%] mx-auto'>
+                    <div className='w-full md:w-[60%] lg:w-[80%] mx-auto'>
                         <DayPicker
                             mode='single'
                             selected={selected}

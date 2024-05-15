@@ -11,7 +11,7 @@ const SpecialOfferModal = () => {
 
     return (
         <Modal
-            className='w-1/3 mx-auto bg-complex mt-10 p-10 text-center'
+            className='w-[90%] md:w-1/2 lg:w-1/3 mx-auto bg-complex mt-10 p-10 text-center'
             isOpen={isOpen}
             onRequestClose={closeModal}
         >

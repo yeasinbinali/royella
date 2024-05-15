@@ -55,12 +55,12 @@ const Login = () => {
     }
 
     return (
-        <div className='mt-10 mb-20 w-1/3 p-10 mx-auto bg-[whitesmoke]'>
+        <div className='mt-10 mb-20 w-[90%] md:w-1/2 lg:w-1/3 p-10 mx-auto bg-[whitesmoke]'>
             <Helmet>
                 <title>Royella | Login</title>
             </Helmet>
             <div className='p-10 bg-simple w-[120px] h-[120px] rounded-full mx-auto text-center'><img src="https://i.ibb.co/KwZnwMt/section-shape1.png" alt="" /></div>
-            <h1 className='text-5xl title-font text-center my-8'>Login</h1>
+            <h1 className='text-3xl md:text-4xl lg:text-5xl title-font text-center my-8'>Login</h1>
             <form className='mb-5' onSubmit={handleSubmit(onSubmit)}>
                 <div className='w-full mx-auto mb-5'>
                     <label>Email</label><br />

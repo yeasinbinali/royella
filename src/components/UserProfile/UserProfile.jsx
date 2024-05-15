@@ -28,7 +28,7 @@ const UserProfile = () => {
     }
 
     return (
-        <div className='mt-10 mb-20 w-1/5 bg-[whitesmoke] mx-auto p-10 text-center'>
+        <div className='mt-10 mb-20 w-[90%] md:w-1/3 lg:w-1/5 bg-[whitesmoke] mx-auto p-10 text-center'>
             <Helmet>
                 <title>Royella | User Profile</title>
             </Helmet>

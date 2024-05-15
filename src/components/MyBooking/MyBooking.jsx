@@ -101,7 +101,7 @@ const MyBooking = () => {
                     <Link to='/rooms'><button className='btn btn-sm bg-main border-none mt-3 text-complex'>Book Now</button></Link>
                 </div> :
                     <div>
-                        <h1 className='text-4xl font-bold text-center mb-10'>Booking Room</h1>
+                        <h1 className='text-3xl md:text-4xl lg:text-5xl title-font text-center mb-10'>Booking Room</h1>
                         <div className="overflow-x-auto">
                             <table className="table">
                                 {/* head */}
@@ -120,7 +120,7 @@ const MyBooking = () => {
                                     bookings.map(booking => <tbody>
                                         <tr key={booking._id} className="mt-2 border-[1px] border-[grey]">
                                             <th><button onClick={() => handleDelete(booking._id)} className='bg-simple p-2 rounded-full hover:bg-red-600'><MdDelete className='text-xl text-complex' /></button></th>
-                                            <td className='text-md font-bold'>{booking.roomData.description}</td>
+                                            <td className='text-sm md:text-md font-bold'>{booking.roomData.description}</td>
                                             <td>${booking.roomData.price_per_night}</td>
                                             <td className='font-bold'>{booking.date}</td>
                                             <td>
@@ -130,7 +130,7 @@ const MyBooking = () => {
                                                         <form method="dialog">
                                                             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                                                         </form>
-                                                        <div className='w-[70%] mx-auto'>
+                                                        <div className='w-[90%] md:w-[60%] lg:w-[70%] mx-auto'>
                                                             <DayPicker
                                                                 mode='single'
                                                                 selected={selected}
