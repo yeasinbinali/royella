@@ -10,7 +10,7 @@ const Rooms = () => {
     const [minPrice, setMinPrice] = useState('');
 
     const handlePriceRange = async () => {
-        const response = await axios.get(`https://royella-server.vercel.app/roomsPriceByRange?minPrice=${minPrice}&maxPrice=${maxPrice}`, {
+        const response = await axios.get(`http://localhost:5000/roomsPriceByRange?minPrice=${minPrice}&maxPrice=${maxPrice}`, {
             params: { minPrice, maxPrice }
         })
         setRooms(response.data)
@@ -19,7 +19,7 @@ const Rooms = () => {
     }
 
     useEffect(() => {
-        axios.get('https://royella-server.vercel.app/rooms')
+        axios.get('http://localhost:5000/rooms')
             .then(res => {
                 setRooms(res.data)
             })

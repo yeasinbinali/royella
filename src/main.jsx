@@ -39,7 +39,7 @@ const router = createBrowserRouter([
       {
         path: '/room/:id',
         element: <PrivateRoute><RoomDetails></RoomDetails></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://royella-server.vercel.app/rooms/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/rooms/${params.id}`)
       },
       {
         path: '/booking',
@@ -64,7 +64,7 @@ const router = createBrowserRouter([
       {
         path: "/reviews/:id",
         element: <Reviews></Reviews>,
-        loader: ({ params }) => fetch(`https://royella-server.vercel.app/rooms/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/rooms/${params.id}`)
       },
       {
         path: '/user',

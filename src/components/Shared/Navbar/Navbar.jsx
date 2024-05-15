@@ -11,8 +11,7 @@ const Navbar = () => {
         <li><NavLink className='text-simple lg:text-complex text-lg' to='/rooms'>Rooms</NavLink></li>,
 
         user?.email && <li><NavLink className='text-simple lg:text-complex text-lg' to='/booking'>My Booking</NavLink></li>,
-
-        <li><NavLink className='text-simple lg:text-complex text-lg' to='/about'>About</NavLink></li>,
+        
         <li><NavLink className='text-simple lg:text-complex text-lg' to='/contact'>Contact</NavLink></li>,
     ]
     return (

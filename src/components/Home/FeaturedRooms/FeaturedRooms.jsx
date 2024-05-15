@@ -6,7 +6,7 @@ import Room from '../Room/Room';
 const FeaturedRooms = () => {
     const [rooms, setRooms] = useState([]);
     useEffect(() => {
-        axios.get('https://royella-server.vercel.app/rooms')
+        axios.get('http://localhost:5000/rooms')
             .then(res => {
                 setRooms(res.data)
             })
