@@ -16,7 +16,7 @@ const MyBooking = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/bookingRoom?email=${user.email}`, {
+        axios.get(`https://royella-server.vercel.app/bookingRoom?email=${user.email}`, {
             withCredentials: true
         })
             .then(res => {
@@ -28,7 +28,7 @@ const MyBooking = () => {
         const room = {
             date: format(selected, 'PP')
         }
-        fetch(`http://localhost:5000/bookingRoom/${id}`, {
+        fetch(`https://royella-server.vercel.app/bookingRoom/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -48,7 +48,7 @@ const MyBooking = () => {
     }
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/bookingRoom/${id}`, {
+        fetch(`https://royella-server.vercel.app/bookingRoom/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

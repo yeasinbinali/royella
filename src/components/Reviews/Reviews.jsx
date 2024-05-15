@@ -15,7 +15,7 @@ const Reviews = () => {
 
     const onSubmit = (data) => {
         const room = { ...data, id }
-        axios.post('http://localhost:5000/reviews', room)
+        axios.post('https://royella-server.vercel.app/reviews', room)
             .then(res => {
                 if (res.data.acknowledged) {
                     Swal.fire({
