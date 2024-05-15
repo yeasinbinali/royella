@@ -16,7 +16,7 @@ const UserReviews = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/reviews')
+        axios.get('https://royella-server.vercel.app/reviews')
             .then(res => {
                 setReviews(res.data);
             })

@@ -24,7 +24,7 @@ const RoomDetails = () => {
     const { image, description, availability, price_per_night, size, special_offers, _id } = room;
 
     useEffect(() => {
-        axios.get('http://localhost:5000/reviews')
+        axios.get('https://royella-server.vercel.app/reviews')
             .then(res => {
                 const allReviews = res.data;
                 const specificRoomById = allReviews.filter(allReview => allReview.id === _id);
@@ -42,7 +42,7 @@ const RoomDetails = () => {
     const handleBookingConfirm = (id) => {
         const email = user.email;
         const userName = user.displayName;
-        axios.get(`http://localhost:5000/rooms/${id}`)
+        axios.get(`https://royella-server.vercel.app/rooms/${id}`)
             .then(res => {
                 const roomData = res.data;
                 const date = format(selected, 'PP');
@@ -52,10 +52,10 @@ const RoomDetails = () => {
                     availability: 'Booked'
                 }
 
-                axios.post('http://localhost:5000/bookingRoom', newData)
+                axios.post('https://royella-server.vercel.app/bookingRoom', newData)
                     .then(res => {
 
-                        fetch(`http://localhost:5000/rooms/${id}`, {
+                        fetch(`https://royella-server.vercel.app/rooms/${id}`, {
                             method: 'PATCH',
                             headers: {
                                 'content-type': 'application/json'

@@ -8,7 +8,7 @@ const IndividualRoom = ({ room }) => {
     const { image, price_per_night, _id } = room;
 
     useEffect(() => {
-        axios.get('http://localhost:5000/reviews')
+        axios.get('https://royella-server.vercel.app/reviews')
             .then(res => {
                 const allReviews = res.data;
                 const specificRoomById = allReviews.filter(allReview => allReview.id === _id);

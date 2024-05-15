@@ -46,14 +46,14 @@ const AuthProvider = ({ children }) => {
             setLoading(false);
             // when user exists then issue a token
             if (currentUser) {
-                axios.post('http://localhost:5000/jwt', loggedUser, {
+                axios.post('https://royella-server.vercel.app/jwt', loggedUser, {
                     withCredentials: true
                 })
                     .then(res => {
                         // console.log(res.data)
                     })
             } else {
-                axios.post('http://localhost:5000/logout', loggedUser, {
+                axios.post('https://royella-server.vercel.app/logout', loggedUser, {
                     withCredentials: true
                 })
                     .then(res => {
