@@ -1,7 +1,37 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
+import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const Contact = () => {
+    const navigate = useNavigate();
+    const form = useRef();
+    console.log(form.current);
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs
+          .sendForm('service_0botnrf', 'template_qgccbi6', form.current, {
+            publicKey: '8upjjrEmRmKnnYtYH',
+          })
+          .then(
+            () => {
+              Swal.fire({
+                title: 'Your message sent successfully!',
+                icon: 'success'
+              })
+              navigate('/');
+            },
+            (error) => {
+              Swal.fire({
+                title: `${error.text}`,
+                icon: 'error'
+              })
+            },
+          );
+    };
     return (
         <div className='w-[90%] mt-10 mb-20 mx-auto bg-[whitesmoke]'>
             <Helmet>
@@ -26,14 +56,14 @@ const Contact = () => {
                         <p className='text-lg font-bold'>Leuven, Royella Headquarter 12, Belgium</p>
                     </div>
                 </div>
-                <div className='bg-simple w-[90%] md:w-[75%] lg:w-[50%] mt-10 md:mt-0 mx-auto p-6'>
+                <form ref={form} onSubmit={sendEmail} className='bg-simple w-[90%] md:w-[75%] lg:w-[50%] mt-10 md:mt-0 mx-auto p-6'>
                     <h1 className='text-xl md:text-2xl lg:text-3xl text-complex text-center title-font mb-10'>GET IN TOUCH</h1>
-                    <input className='w-full p-2 mb-5' type="text" placeholder='Your Name' />
-                    <input className='w-full p-2 mb-5' type="text" placeholder='Your Email' />
-                    <input className='w-full p-2 mb-5' type="text" placeholder='Subject' />
-                    <textarea className='w-full p-2 mb-5' type="text" placeholder='Write a message' />
-                    <button className='btn bg-main text-complex border-none rounded-none btn-sm w-full mb-5'>Sent Message</button>
-                </div>
+                    <input className='w-full p-2 mb-5' type="text" name='name' placeholder='Your Name' />
+                    <input className='w-full p-2 mb-5' type="text" name='email' placeholder='Your Email' />
+                    <input className='w-full p-2 mb-5' type="text" name='subject' placeholder='Subject' />
+                    <textarea className='w-full p-2 mb-5' type="text" name='message' placeholder='Write a message' />
+                    <input className='btn bg-main text-complex border-none rounded-none btn-sm w-full mb-5' type='submit' value='Sent Message' />
+                </form>
             </div>
         </div>
     );
